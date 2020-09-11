@@ -195,3 +195,9 @@ body {
   .state {
     animation-play-state: paused;
 }
+  
+  .instructions {
+    position: fixed;
+    top:5px;
+    left:5px;  
+  }

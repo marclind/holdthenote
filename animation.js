@@ -66,7 +66,7 @@ const userDefined = {
   
 //BYT UT HÄR FÖRFAN
 
-  $(window).on('mousedown', function (e) {
+  $(window).on('mousemove', function (e) {
   
     mouse = {
       x: e.originalEvent.touches ? e.originalEvent.touches[0].pageX : e.pageX,

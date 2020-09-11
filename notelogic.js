@@ -1,5 +1,9 @@
+let scoreh2 = document.querySelector('.score')
+
 let noteArray = []; 
-let currentNote; ; 
+let currentNote;
+let perfectHit = false;
+let score = -1;
 
 setInterval(() => {
     noteArray.push(note); 
@@ -14,16 +18,20 @@ setInterval(() => {
         || currentNote === noteArray[0]+1
         ) 
         && currentNote != 0 ) {
-        console.log("WINWINWIN")
+            AnimateBalls();
+            perfectHit = true;
+            score++;
+            scoreh2.innerHTML = score;
+            
+
     } else {
-        console.log("YOU SUCK")
+        perfectHit = false;
+        score = -1;
     }
 
-    console.log("/////")
-
+    console.log(perfectHit)
 
 }, 100);
-
 
 
 

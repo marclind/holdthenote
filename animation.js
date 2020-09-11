@@ -66,29 +66,29 @@ const userDefined = {
   
 //BYT UT HÄR FÖRFAN
 
-  $(window).on('mousemove', function (e) {
+  function AnimateBalls(e) {
   
-    mouse = {
+    /* mouse = {
       x: e.originalEvent.touches ? e.originalEvent.touches[0].pageX : e.pageX,
       y: e.originalEvent.touches ? e.originalEvent.touches[0].pageY : e.pageY,
-    }
+    } */
     
     for (let i = 0, length = Math.random()*userDefined.distribution; i < length; i++) {
       
       createBall(
-        mouse.x, 
-        mouse.y,
-        (mouse.x - oldMouse.x)*Math.random(), 
-        (mouse.y - oldMouse.y)*Math.random());
+        100, 
+        100,
+        (100 - oldMouse.x)*Math.random(), 
+        (100 - oldMouse.y)*Math.random());
       
     }
   
     oldMouse = {
-      x: mouse.x,
-      y: mouse.y
+      x: 100,
+      y: 100
     }
     
-  });
+  };
   
   
   // *******************

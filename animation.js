@@ -12,7 +12,10 @@ const userDefined = {
   }
   
   const colours = [
-    '0xef3a49'
+    '0xFFE358',
+    '0x00DFA1',
+    '0xFFB957',
+    '0x8577F5'
   ]
   
   const coloursLength = colours.length;

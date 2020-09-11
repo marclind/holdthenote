@@ -28,8 +28,8 @@ window.onload = function () {
     navigator.mediaDevices.getUserMedia(constraints)
         .then(function (mediaStream) {
             console.log("SUCCESS");
-            window.localStream = mediaStream;
-            audioInput = audioCtx.createMediaStreamSource(mediaStream);
+            // window.localStream = mediaStream;
+            // audioInput = audioCtx.createMediaStreamSource(mediaStream);
             console.log('mediaStream: ', mediaStream);
             // audioInput.connect(audioNode);
 

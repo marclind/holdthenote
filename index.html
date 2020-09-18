@@ -3,10 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/4.5.1/pixi.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    
+    <title>Hold The Note</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/animation.css">
 </head>
+
+<!-- https://holdthenote.netlify.app/ -->
+
+<!-- 
+    TO DO
+    * Lägg in text överst via canvas (fortsätt i "handleText" i canvas.js)
+    * Stoppa sparkle animation att börja om x=0 när hit wall
+    * Set correct height for sparkle animation
+    * Gör "smalhet" på stor boll korrekt när resize (event listener?)
+
+    * Gör om MIDI till ton 
+
+    * Spara high score upp firebase, visa upp topp 3 (eller 10) sparade high score, och lägg till knapp så användare kan skriva in namn och spara high score 
+-->
+
 <body>
-    <a href="./game.html"><button id="activate">Spela ett spel</button></a>
+    <h1>HOLD THAT NOTE</h1>
+    <h2 class="noteValue"></h2><br><br>
+    <h2>Score:</h2>
+    <h2 class="score"></h2><br><br>
+    <!-- <div class="pyro">
+        <div class="before"></div>
+        <div class="after"></div>
+    </div> -->
+
+    <h2>High score:</h2>
+    <h2 class="highScore"></h2>
+
+    <div class="wrapper">
+        <canvas id="canvas"></canvas>
+    </div>
+
+    <script src="./js/notelogic.js"></script>
+
+    <script src="./js/canvas.js"></script>
+    <script src="./js/animation.js"></script>
+    <script src="./js/index.js"></script>
+    <!-- <script src="./js/sound.js"></script> -->
 
 </body>
 </html>

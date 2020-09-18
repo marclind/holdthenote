@@ -26,12 +26,16 @@ setInterval(() => {
             perfectHit = true;
             score++;
             scoreArray.push(score); 
-            scoreh2.innerHTML = score;            
+            scoreh2.innerHTML = score;  
+            requestAnimationFrame(animate); 
+            // animate(); 
+         
     } else {
         let testing = new Promise((resolve, reject) => {
             perfectHit = false;
             score = -1;
             scoreh2.innerHTML = score+1;
+            stopAnimation(); 
             if (!perfectHit) {
                 resolve("YEY")
             }
@@ -49,7 +53,7 @@ setInterval(() => {
         })
     }
     // console.log(perfectHit)
-}, 100);
+}, 5);
 
 
 

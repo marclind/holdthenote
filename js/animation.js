@@ -72,12 +72,14 @@ const userDefined = {
       x: e.originalEvent.touches ? e.originalEvent.touches[0].pageX : e.pageX,
       y: e.originalEvent.touches ? e.originalEvent.touches[0].pageY : e.pageY,
     } */
+
+    console.log(y)
     
     for (let i = 0, length = Math.random()*userDefined.distribution; i < length; i++) {
       
       createBall(
-        100, 
-        100,
+        sparklePos, 
+        y,
         (100 - oldMouse.x)*Math.random(), 
         (100 - oldMouse.y)*Math.random());
       

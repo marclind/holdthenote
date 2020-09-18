@@ -7,6 +7,7 @@ let perfectHit = false;
 let score = -1;
 let scoreArray = []; 
 let highScoreArray = []; 
+let highScoreValue; 
 
 // for every 0.1 seconds, check note 
 setInterval(() => {
@@ -57,6 +58,10 @@ setInterval(() => {
                 highScoreArray.push(scoreArray[scoreArray.length-1])
                 console.log('highScoreArray: ', highScoreArray);
                 console.log("MAX: " + Math.max(...highScoreArray));
+
+                highScoreValue = Math.max(...highScoreArray); 
+
+                highScore.innerHTML = highScoreValue; 
 
                 // console.log('scoreArray: ', scoreArray[scoreArray.length-1]);
 

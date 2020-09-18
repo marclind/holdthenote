@@ -63,7 +63,6 @@ function onAudio() {
 	//console.log(tempArray)
 	let latestFrequency = getAverageVolume(tempArray);
 	//console.log(latestFrequency)
-
 	//use latestFrequency
 }
 
@@ -126,7 +125,6 @@ function updatePitch(time) {
 	let cycles = new Array;
 	analyser.getFloatTimeDomainData(buf);
 	let ac = autoCorrelate(buf, audioContext.sampleRate);
-	// TODO: Paint confidence meter on canvasElem here.
 
 	/* if (DEBUGCANVAS) {  // This draws the current waveform, useful for debugging
 		waveCanvas.clearRect(0,0,512,256);

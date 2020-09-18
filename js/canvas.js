@@ -57,11 +57,13 @@ class ScoreBar {
 
 const scorebar = new ScoreBar(x, y, radius, color, dx, dy);
 scorebar.draw();
+// handleText(); 
 
 function animate() {
     // ctx.clearRect(0, 0, canvas.width, canvas.height);
     scorebar.draw();
     scorebar.update();
+    // handleText(); 
     // requestAnimationFrame(animate); 
 }
 // animate(); 
@@ -76,18 +78,19 @@ function stopAnimation() {
 function handleText() {
     ctx.fillStyle = 'black';
     ctx.strokeStyle = 'black';
+    ctx.font = '20px Verdana'
 
     // "Score" text
     // ctx.font = '15px Bungee';
-    ctx.fillText('Score', 275, 15);
+    ctx.fillText('Blablabla', 275, 15);
 
     // Actual score text
     // ctx.font = '60px Bungee';
-    ctx.fillText(score, 278, 65);
+    ctx.fillText('score', 278, 65);
 
     // Collisions text
     // ctx.font = '15px Bungee';
-    ctx.strokeText('Collisions: ' + collisionCount, 10, 25);
-    ctx.strokeText('Game speed: ' + (gameSpeed*10/3).toFixed(1), 10, 45);
+    ctx.strokeText('Collisions: ', 600, 25);
 }
+
 

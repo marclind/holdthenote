@@ -5,6 +5,7 @@ let currentNote;
 let perfectHit = false;
 let score = -1;
 
+// for every 0.1 seconds, check note 
 setInterval(() => {
     noteArray.push(note); 
 
@@ -17,7 +18,7 @@ setInterval(() => {
         || currentNote === noteArray[0]-1
         || currentNote === noteArray[0]+1
         ) 
-        && currentNote != 0 ) {
+        && currentNote > 0 ) {
             AnimateBalls();
             perfectHit = true;
             score++;
@@ -27,6 +28,8 @@ setInterval(() => {
     } else {
         perfectHit = false;
         score = -1;
+        scoreh2.innerHTML = score+1;
+
     }
 
     console.log(perfectHit)

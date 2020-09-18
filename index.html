@@ -7,14 +7,21 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     
     <title>Hold The Note</title>
-    <link rel="stylesheet" href="./styles.css">
-    <link rel="stylesheet" href="./animation.css">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/animation.css">
 </head>
 
+<!-- https://holdthenote.netlify.app/ -->
+
 <!-- 
-    * Starta mic
-    * Beräkna pitch
-    * Print pitch
+    TO DO
+    * Stoppa animation innan ok mikrofon
+    * Create canvas istället för animation
+    * Spara högsta värdet på score och visa upp (lokalt)
+    * Sätt upp firebase, spara högsta värdet (om användare vill (knapp och skriva in namn))
+    * Gör om MIDI till ton i skala 
+
+    + 
     * Skapa canvas
     * När detect pitch: animation start
 -->
@@ -28,11 +35,10 @@
         <div class="after"></div>
     </div> -->
 
-    <script src="./animation.js"></script>
-    <script src="./index.js"></script>
-    <script src="./notelogic.js"></script>
-
-    <!-- <script src="./sound.js"></script> -->
+    <script src="./js/animation.js"></script>
+    <script src="./js/index.js"></script>
+    <script src="./js/notelogic.js"></script>
+    <!-- <script src="./js/sound.js"></script> -->
 
 </body>
 </html>

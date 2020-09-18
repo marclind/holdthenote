@@ -153,7 +153,7 @@ function updatePitch( time ) {
 	} */
 
  	if (ac == -1) {
-        noteValue.innerHTML = "0";
+		noteValue.innerHTML = "0";
         note = 0; 
  		/* detectorElem.className = "vague";
 	 	pitchElem.innerText = "--";

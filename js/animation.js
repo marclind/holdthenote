@@ -3,9 +3,11 @@
 // *******************
 
 const userDefined = {
-  gravity: 2,
+  // gravity: 5,
+  gravity: 0,
   friction: .99,
-  ballSize: 15,
+  // ballSize: 15,
+  ballSize: 10,
   wallFriction: .5,
   distribution: 1,
   spread: 10
@@ -19,7 +21,7 @@ const colours = [
 ]
 
 const coloursLength = colours.length;
-const halfSpread = userDefined.spread / 2;
+const halfSpread = userDefined.spread / 4;
 var mouse = { x: 0, y: 0 };
 var oldMouse = { x: 0, y: 0 };
 var balls = [];
@@ -36,7 +38,7 @@ const pixelTexture = PIXI.Texture.fromImage('data:image/png;base64,iVBORw0KGgoAA
 // cache window dimensions
 // *******************
 
-var windowDimensions = {
+let windowDimensions = {
   width: window.innerWidth,
   height: window.innerHeight
 }
@@ -48,40 +50,32 @@ var windowDimensions = {
 const app = new PIXI.Application(windowDimensions.width, windowDimensions.height, { antialias: true, transparent: true });
 document.body.appendChild(app.view);
 
-
 // *******************
 // DOM
 // *******************
-
 $(window).on('resize', function () {
-
   windowDimensions = {
     width: window.innerWidth,
     height: window.innerHeight
   }
-
   app.renderer.resize(windowDimensions.width, windowDimensions.height);
+  console.log('windowDimensions: ', windowDimensions);
 
 });
 
 //BYT UT HÄR FÖRFAN
-
 function AnimateBalls(e) {
-
   /* mouse = {
     x: e.originalEvent.touches ? e.originalEvent.touches[0].pageX : e.pageX,
     y: e.originalEvent.touches ? e.originalEvent.touches[0].pageY : e.pageY,
   } */
-
-  console.log(y)
-
   for (let i = 0, length = Math.random() * userDefined.distribution; i < length; i++) {
-
     createBall(
       sparklePos,
-      y,
+      100, // y eller liknande!!!
       (100 - oldMouse.x) * Math.random(),
-      (100 - oldMouse.y) * Math.random());
+      (100 - oldMouse.y) * Math.random()
+      );
 
   }
 
@@ -139,22 +133,27 @@ function createBall(x, y, xv, yv) {
     balls[i].xv *= userDefined.friction;
     balls[i].yv *= userDefined.friction;
 
-    // dont allow off sides
-    if (balls[i].x <= 0) {
-      balls[i].x = 0;
-    } else if (balls[i].x >= windowDimensions.width - userDefined.ballSize) {
-      balls[i].x = windowDimensions.width - userDefined.ballSize;
-    }
+    balls[i].width = balls[i].height -= 0.1;
 
-    // bounce off
-    if (balls[i].x <= 0 || balls[i].x >= windowDimensions.width - userDefined.ballSize) {
 
-      // reverse speed
-      balls[i].xv *= -1;
+    // ballSize: 10,
 
-      // slow down a bit
-      balls[i].xv *= userDefined.wallFriction;
-    }
+    // // dont allow off sides
+    // if (balls[i].x <= 0) {
+    //   balls[i].x = 0;
+    // } else if (balls[i].x >= windowDimensions.width - userDefined.ballSize) {
+    //   balls[i].x = windowDimensions.width - userDefined.ballSize;
+    // }
+
+    // // bounce off
+    // if (balls[i].x <= 0 || balls[i].x >= windowDimensions.width - userDefined.ballSize) {
+
+    //   // reverse speed
+    //   // balls[i].xv *= -1;
+
+    //   // slow down a bit
+    //   balls[i].xv *= userDefined.wallFriction;
+    // }
   }
 
   // run a clean up

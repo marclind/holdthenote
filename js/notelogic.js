@@ -22,12 +22,12 @@ setInterval(() => {
         || currentNote === noteArray[0]-1
         || currentNote === noteArray[0]+1) 
         && currentNote > 0 ) {
-            AnimateBalls();
             perfectHit = true;
             score++;
             scoreArray.push(score); 
             scoreh2.innerHTML = score;  
             requestAnimationFrame(animate); 
+            AnimateBalls();
             // animate(); 
          
     } else {

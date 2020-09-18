@@ -15,21 +15,19 @@
 
 <!-- 
     TO DO
-    
+    * Set correct height for sparkle animation
+    * Stop sparkle animation from moving when hit wall
+    * Gör "smalhet" på stor boll korrekt när resize (event listener?)
 
-
-    * Create canvas istället för animation
-    * Spara high score / högsta värdet på score och visa upp (lokalt)
-    * Sätt upp firebase, spara högsta värdet (om användare vill (knapp och skriva in namn))
+    * Lägg in snygg text (antingen via html eller inuti canvas) (fortsätt i "handleText" i canvas.js)
     * Gör om MIDI till ton i skala 
 
-    + 
-    * Skapa canvas
-    * När detect pitch: animation start
+    * Spara high score upp firebase, visa upp topp 3 (eller 10) sparade high score, och lägg till knapp så användare kan skriva in namn och spara high score 
 -->
 
 <body>
-    <h1 class="noteValue"></h1><br><br>
+    <h1>HOLD THAT NOTE</h1>
+    <h2 class="noteValue"></h2><br><br>
     <h2>Score:</h2>
     <h2 class="score"></h2><br><br>
     <!-- <div class="pyro">
@@ -44,10 +42,11 @@
         <canvas id="canvas"></canvas>
     </div>
 
+    <script src="./js/notelogic.js"></script>
+
     <script src="./js/canvas.js"></script>
     <script src="./js/animation.js"></script>
     <script src="./js/index.js"></script>
-    <script src="./js/notelogic.js"></script>
     <!-- <script src="./js/sound.js"></script> -->
 
 </body>

@@ -45,6 +45,9 @@ class ScoreBar {
         if (this.x + this.dx > canvas.width - this.radius + 1) {
             this.x = x;
             this.dx = 0;
+            // sparklePos = canvas.width; 
+            // console.log('this.x: ', this.x);
+            // console.log('sparklePos: ', sparklePos);
         } else { this.dx = dx }
     }
     restart() {
@@ -67,5 +70,24 @@ function stopAnimation() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     scorebar.restart();
     scorebar.draw();
+}
+
+// CONTINUE TO WRITE TEXT HERE
+function handleText() {
+    ctx.fillStyle = 'black';
+    ctx.strokeStyle = 'black';
+
+    // "Score" text
+    // ctx.font = '15px Bungee';
+    ctx.fillText('Score', 275, 15);
+
+    // Actual score text
+    // ctx.font = '60px Bungee';
+    ctx.fillText(score, 278, 65);
+
+    // Collisions text
+    // ctx.font = '15px Bungee';
+    ctx.strokeText('Collisions: ' + collisionCount, 10, 25);
+    ctx.strokeText('Game speed: ' + (gameSpeed*10/3).toFixed(1), 10, 45);
 }
 
